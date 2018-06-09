@@ -13,10 +13,11 @@ class GithubSpider(scrapy.Spider):
         
         return urls
 
+
     def parse(self, response):
         for gitItem in response.css('li.public'):
             yield {
-                    'name': gitItem.xpath('.//a[@itemprop="name codeRespository"]/text()').re_first("\n\s*(.*)"),
+                    'name': gitItem.xpath('.//a[@itemprop="name codeRepository"]/text()').re_first("\n\s*(.*)"),
 
                     'update_time': gitItem.xpath('.//relative-time/@datetime').extract_first()
                     }
