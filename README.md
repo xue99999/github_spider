@@ -9,10 +9,15 @@
 实验楼 ['https://github.com/shiyanlou?page=2&tab=repositories']
 页数用{}来代替, start_urls方法必须写@property把他变成属性
 
-```python
+``` python
   @property
   def start_urls(self):
-    https://github.com/shiyanlou?page={}&tab=repositories
-    urls =  (url.format(i) for i in range(1, 5))
+    url_temp = 'https://github.com/shiyanlou?page={}&tab=repositories'
+    urls =  (url_temp.format(i) for i in range(1, 5))
     return urls
+```
+
+## 爬虫结果是
+``` python
+  [{'name': XXX, 'update_time': XXX}]
 ```
