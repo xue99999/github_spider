@@ -17,7 +17,8 @@
     return urls
 ```
 
-## 爬虫结果是
+## 爬虫结果是shiyanlougithub.json
+> 格式如下:
 ``` python
   [{'name': XXX, 'update_time': XXX}]
 ```
